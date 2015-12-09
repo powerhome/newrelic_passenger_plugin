@@ -7,12 +7,12 @@ class Status
 
     @status_result = [
       doc.xpath('//info/max').text.to_i,
-      doc.xpath('//info/capacity_used').text.to_i,
+      doc.xpath('//info/supergroups/supergroup/group/capacity_used').text.to_i,
       doc.xpath('//info/supergroups/supergroup/group/get_wait_list_size').text.to_i,
       parse_sessions(doc),
       parse_cpu(doc),
       parse_app_memory(doc),
-      parse_last_used(doc)
+      parse_last_used(doc),
     ]
   end
 
