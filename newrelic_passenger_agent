@@ -44,9 +44,14 @@ module PassengerAgent
       report_metric "passenger/calculated/percent_free", "%", percent_free
 
       # Report data from passegner-status command
-      report_metric "passenger/processes/max", "Processes", @status.max
-      report_metric "passenger/processes/running", "Processes", @status.current
-      report_metric "passenger/queue/waiting", "Requests", @status.queue
+      report_metric "passenger/processes/max", "Processes", @status.max_process_count
+      report_metric "passenger/processes/running", "Processes", @status.current_process_count
+      report_metric "passenger/processes/enabled", "Processes", @status.enabled_process_count
+      report_metric "passenger/processes/disabling", "Processes", @status.disabling_process_count
+      report_metric "passenger/processes/disabled", "Processes", @status.disabled_process_count
+      report_metric "passenger/processes/disable_wait", "Processes", @status.disable_wait_process_count
+      report_metric "passenger/processes/being_spawned", "Processes", @status.being_spawned_process_count
+      report_metric "passenger/queue/waiting", "Requests", @status.waiting_request_count
       report_metric "passenger/totals/sessions", "Sessions", @status.sessions
       report_metric "passenger/totals/cpu", "CPU%", @status.cpu
 
