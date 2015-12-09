@@ -25,7 +25,7 @@ class Status
     @status_result[0]
   end
 
-  def currenct_process_count
+  def current_process_count
     @status_result[1]
   end
 
