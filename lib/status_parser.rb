@@ -21,7 +21,7 @@ class Status
     ]
   end
 
-  def max_processes_count
+  def max_process_count
     @status_result[0]
   end
 
