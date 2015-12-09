@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso8859-1"?>
 <info version="2">
-   <process_count>6</process_count>
-   <max>6</max>
-   <capacity_used>6</capacity_used>
-   <get_wait_list_size>3</get_wait_list_size>
+   <process_count>11</process_count>
+   <max>22</max>
+   <capacity_used>33</capacity_used>
+   <get_wait_list_size>44</get_wait_list_size>
    <get_wait_list/>
    <supergroups>
       <supergroup>
@@ -18,13 +18,13 @@
             <app_root>testapp</app_root>
             <app_type>rack</app_type>
             <environment>backstage</environment>
-            <enabled_process_count>6</enabled_process_count>
-            <disabling_process_count>0</disabling_process_count>
-            <disabled_process_count>0</disabled_process_count>
-            <capacity_used>6</capacity_used>
-            <get_wait_list_size>3</get_wait_list_size>
-            <disable_wait_list_size>0</disable_wait_list_size>
-            <processes_being_spawned>0</processes_being_spawned>
+            <enabled_process_count>111</enabled_process_count>
+            <disabling_process_count>222</disabling_process_count>
+            <disabled_process_count>333</disabled_process_count>
+            <capacity_used>444</capacity_used>
+            <get_wait_list_size>555</get_wait_list_size>
+            <disable_wait_list_size>666</disable_wait_list_size>
+            <processes_being_spawned>777</processes_being_spawned>
             <secret>secret</secret>
             <life_status>ALIVE</life_status>
             <options>
