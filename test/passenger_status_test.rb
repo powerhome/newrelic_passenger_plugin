@@ -10,15 +10,35 @@ class PassengerStatusTest < Test::Unit::TestCase
   end
 
   test "max possible passenger processes are parsed correctly" do
-    assert_equal 6, @status_parser.max
+    assert_equal 22, @status_parser.max_process_count
   end
 
   test "number of running passenger processes are parsed correctly" do
-    assert_equal 6, @status_parser.current
+    assert_equal 444, @status_parser.current_process_count
+  end
+
+  test "number of enabled passenger processes are parsed correctly" do
+    assert_equal 111, @status_parser.enabled_process_count
+  end
+
+  test "number of disabling passenger processes are parsed correctly" do
+    assert_equal 222, @status_parser.disabling_process_count
+  end
+
+  test "number of disabled passenger processes are parsed correctly" do
+    assert_equal 333, @status_parser.disabled_process_count
+  end
+
+  test "number of disable_wait passenger processes are parsed correctly" do
+    assert_equal 666, @status_parser.disable_wait_process_count
+  end
+
+  test "number of being spawned passenger processes are parsed correctly" do
+    assert_equal 777, @status_parser.being_spawned_process_count
   end
 
   test "requests waiting on global queue are parsed correctly" do
-    assert_equal 3, @status_parser.queue
+    assert_equal 555, @status_parser.waiting_request_count
   end
 
   test "number of sessions (summed as total) parsed correctly" do
