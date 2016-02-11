@@ -7,24 +7,29 @@ class Status
 
     @status_result = [
       doc.xpath('//info/max').text.to_i,
-      doc.xpath('//info/capacity_used').text.to_i,
-      doc.xpath('//info/get_wait_list_size').text.to_i,
+      doc.xpath('//info/supergroups/supergroup/group/capacity_used').text.to_i,
+      doc.xpath('//info/supergroups/supergroup/group/get_wait_list_size').text.to_i,
       parse_sessions(doc),
       parse_cpu(doc),
       parse_app_memory(doc),
-      parse_last_used(doc)
+      parse_last_used(doc),
+      doc.xpath('//info/supergroups/supergroup/group/enabled_process_count').text.to_i,
+      doc.xpath('//info/supergroups/supergroup/group/disabling_process_count').text.to_i,
+      doc.xpath('//info/supergroups/supergroup/group/disabled_process_count').text.to_i,
+      doc.xpath('//info/supergroups/supergroup/group/disable_wait_list_size').text.to_i,
+      doc.xpath('//info/supergroups/supergroup/group/processes_being_spawned').text.to_i
     ]
   end
 
-  def max
+  def max_process_count
     @status_result[0]
   end
 
-  def current
+  def current_process_count
     @status_result[1]
   end
 
-  def queue
+  def waiting_request_count
     @status_result[2]
   end
 
@@ -42,6 +47,26 @@ class Status
 
   def last_used_time
     @status_result[6]
+  end
+  
+  def enabled_process_count
+    @status_result[7]
+  end
+  
+  def disabling_process_count
+    @status_result[8]
+  end
+  
+  def disabled_process_count
+    @status_result[9]
+  end
+  
+  def disable_wait_process_count
+    @status_result[10]
+  end
+  
+  def being_spawned_process_count
+    @status_result[11]
   end
 
   private
